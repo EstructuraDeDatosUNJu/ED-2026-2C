@@ -84,15 +84,15 @@ public class Helper {
         }
     }
 
-    public static Integer getInteger(Scanner scanner, String inputMessage) {
+    public static Integer nextInteger(Scanner scanner, String inputMessage) {
         return nextInteger(scanner, inputMessage, "Ingrese un número válido");
     }
 
-    public static Integer getInteger(String inputMessage, String errorMessage) {
+    public static Integer nextInteger(String inputMessage, String errorMessage) {
         return nextInteger(Helper.scanner, inputMessage, errorMessage);
     }
 
-    public static Integer getInteger(String inputMessage) {
+    public static Integer nextInteger(String inputMessage) {
         return nextInteger(Helper.scanner, inputMessage, "Ingrese un número válido");
     }
 
@@ -117,15 +117,15 @@ public class Helper {
         }
     }
 
-    public static Double getDouble(Scanner scanner, String inputMessage) {
+    public static Double nextDouble(Scanner scanner, String inputMessage) {
         return nextDouble(scanner, inputMessage, "Ingrese un número válido");
     }
 
-    public static Double getDouble(String inputMessage, String errorMessage) {
+    public static Double nextDouble(String inputMessage, String errorMessage) {
         return nextDouble(Helper.scanner, inputMessage, errorMessage);
     }
 
-    public static Double getDouble(String inputMessage) {
+    public static Double nextDouble(String inputMessage) {
         return nextDouble(Helper.scanner, inputMessage, "Ingrese un número válido");
     }
 
