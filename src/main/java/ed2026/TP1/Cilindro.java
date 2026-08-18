@@ -14,7 +14,8 @@ package ed2026.TP1;
  *          Constructor predeterminado que inicialice ambos valores en 1.0.
  *          Un constructor con argumentos para establecer el radio y la altura del cilindro.
  *          Un método que devuelva el volumen del cilindro (Fórmula: π * radio² * altura).
- *          Un método que devuelva el área de la superficie total (Fórmula: 2 * π * radio * (radio + altura)).
+ *          Un método que devuelva el área de la superficie total (Fórmula: 2 * π * radio * (radio +
+ *          altura)).
  * 
  */
 public class Cilindro {
@@ -41,7 +42,7 @@ public class Cilindro {
 
     public void setRadio(double radio) {
         if (radio <= 0) {
-            throw new IllegalArgumentException("El radio no puede ser negativo");
+            throw new IllegalArgumentException("El radio no puede ser negativo, no seas tan bruto");
         }
         this.radio = radio;
     }

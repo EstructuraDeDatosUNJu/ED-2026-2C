@@ -11,10 +11,12 @@ import java.util.Scanner;
  * 
  *          En el programa principal (main) se debe:
  *          Crear una única instancia de la clase Cilindro.
- *          Solicitar al usuario que ingrese el radio y la altura verificando que los valores sean estrictamente
+ *          Solicitar al usuario que ingrese el radio y la altura verificando que los valores sean
+ *          estrictamente
  *          positivos (mayores a cero).
  *          Utilizar los métodos de la clase Cilindro para establecer estas dimensiones.
- *          Calcular y mostrar el volumen y el área de la superficie del cilindro creado, formateando los decimales a
+ *          Calcular y mostrar el volumen y el área de la superficie del cilindro creado,
+ *          formateando los decimales a
  *          dos cifras.
  *
  */
@@ -54,6 +56,11 @@ public class TP1_01 {
         cilindro.setRadio(radio);
         cilindro.setAltura(altura);
 
+        // Calcular y mostrar el volumen y el área de la superficie del cilindro
+        System.out.printf("Volumen del cilindro: %.2f%n", cilindro.getVolumen());
+        System.out.printf("Área de la superficie del cilindro: %.2f%n", cilindro.getAreaSuperficie());
+
+        cilindro.setRadio(-3);
         // Calcular y mostrar el volumen y el área de la superficie del cilindro
         System.out.printf("Volumen del cilindro: %.2f%n", cilindro.getVolumen());
         System.out.printf("Área de la superficie del cilindro: %.2f%n", cilindro.getAreaSuperficie());
