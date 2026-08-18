@@ -56,9 +56,12 @@ public class CuentaBancaria {
         this.titular = titular;
     }
 
-    // public void setSaldo(double saldo) {
-    //     this.saldo = saldo;
-    // }
+    private void setSaldo(double saldo) {
+        if (saldo < 0) {
+            throw new IllegalArgumentException("El saldo no puede ser negativo");
+        }
+        this.saldo = saldo;
+    }
 
     // public void setTipoCuenta(String tipoCuenta) {
     //     this.tipoCuenta = tipoCuenta;
@@ -66,20 +69,12 @@ public class CuentaBancaria {
 
     // Método para depositar dinero
     public void depositar(double cantidad) {
-        if (cantidad > 0) {
-            saldo += cantidad;
-        } else {
-            System.out.println("La cantidad a depositar debe ser positiva.");
-        }
+        setSaldo(this.saldo + cantidad);
     }
 
     // Método para retirar dinero
     public void retirar(double cantidad) {
-        if (cantidad > 0 && cantidad <= saldo) {
-            saldo -= cantidad;
-        } else {
-            System.out.println("Cantidad inválida o saldo insuficiente.");
-        }
+        setSaldo(this.saldo - cantidad);
     }
 
     // Método para mostrar información de la cuenta

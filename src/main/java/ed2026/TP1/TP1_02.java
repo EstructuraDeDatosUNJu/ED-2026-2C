@@ -31,10 +31,11 @@ public class TP1_02 {
             switch (opcion) {
                 case 1:
                     // Mostrar información de la cuenta
-                    System.out.println("Titular: " + cuenta.getTitular());
-                    System.out.println("Saldo: " + cuenta.getSaldo());
-                    System.out.println("Tipo de cuenta: " + cuenta.getTipoCuenta());
-                    // cuenta.mostrarInformacion();
+                    // System.out.println("Titular: " + cuenta.getTitular());
+                    // System.out.println("Saldo: " + cuenta.getSaldo());
+                    // System.out.println("Tipo de cuenta: " + cuenta.getTipoCuenta());
+                    cuenta.mostrarInformacion();
+                    System.out.println("\nInformación: " + cuenta.toString() + "\n");
                     break;
                 case 2:
                     // Depositar dinero
