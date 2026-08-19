@@ -1,7 +1,6 @@
 package ed2026.TP1;
 
 import java.util.Scanner;
-import ed2026.TP1.Helper;
 
 /**
  * Clase que representa el ejercicio 2 del TP1.
@@ -32,26 +31,22 @@ public class TP1_02 {
             switch (opcion) {
                 case 1:
                     // Mostrar información de la cuenta
-                    // System.out.println("Titular: " + cuenta.getTitular());
-                    // System.out.println("Saldo: " + cuenta.getSaldo());
-                    // System.out.println("Tipo de cuenta: " + cuenta.getTipoCuenta());
-                    cuenta.mostrarInformacion();
-                    System.out.println("\nInformación: " + cuenta.toString() + "\n");
+                    System.out.println("Titular: " + cuenta.getTitular());
+                    System.out.println("Saldo: " + cuenta.getSaldo());
+                    System.out.println("Tipo de cuenta: " + cuenta.getTipoCuenta());
+                    // cuenta.mostrarInformacion();
+                    // System.out.println("\nInformación: " + cuenta.toString() + "\n");
                     break;
                 case 2:
                     // Depositar dinero
-                    double montoDeposito = Helper.nextDouble(scanner, "Ingrese el monto a depositar: ");
-                    cuenta.depositar(montoDeposito);
-                    System.out.println("Depósito realizado. Nuevo saldo: " + cuenta.getSaldo());
-
-                    // System.out.print("Ingrese el monto a depositar: ");
-                    // double montoDeposito = Double.parseDouble(scanner.nextLine());
-                    // if (montoDeposito <= 0) {
-                    //     System.out.println("El monto a depositar debe ser mayor que cero.");
-                    // } else {
-                    //     cuenta.depositar(montoDeposito);
-                    //     System.out.println("Depósito realizado. Nuevo saldo: " + cuenta.getSaldo());
-                    // }
+                    System.out.print("Ingrese el monto a depositar: ");
+                    double montoDeposito = Double.parseDouble(scanner.nextLine());
+                    if (montoDeposito <= 0) {
+                        System.out.println("El monto a depositar debe ser mayor que cero.");
+                    } else {
+                        cuenta.depositar(montoDeposito);
+                        System.out.println("Depósito realizado. Nuevo saldo: " + cuenta.getSaldo());
+                    }
                     break;
                 case 3:
                     // Retirar dinero
