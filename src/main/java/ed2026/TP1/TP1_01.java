@@ -60,7 +60,14 @@ public class TP1_01 {
         System.out.printf("Volumen del cilindro: %.2f%n", cilindro.getVolumen());
         System.out.printf("Área de la superficie del cilindro: %.2f%n", cilindro.getAreaSuperficie());
 
-        cilindro.setRadio(-3);
+        System.out.println("\nValor del Radio: " + cilindro.getRadio());
+        try {
+            // Intentar establecer un radio negativo para probar la validación
+            cilindro.setRadio(-3);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("\nValor del Radio después de la prueba: " + cilindro.getRadio());
         // Calcular y mostrar el volumen y el área de la superficie del cilindro
         System.out.printf("Volumen del cilindro: %.2f%n", cilindro.getVolumen());
         System.out.printf("Área de la superficie del cilindro: %.2f%n", cilindro.getAreaSuperficie());
