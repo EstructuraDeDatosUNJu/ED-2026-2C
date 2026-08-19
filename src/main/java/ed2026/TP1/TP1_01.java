@@ -43,9 +43,9 @@ public class TP1_01 {
             }
         }
 
-        System.out.print("Ingrese la altura del cilindro (mayor a cero): ");
         // Validar que la altura sea mayor a cero
         while (altura <= 0) {
+            System.out.print("Ingrese la altura del cilindro (mayor a cero): ");
             altura = scanner.nextDouble();
             if (altura <= 0) {
                 System.out.print("Error: La altura debe ser mayor a cero. Ingrese nuevamente: ");

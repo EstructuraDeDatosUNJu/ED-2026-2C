@@ -35,9 +35,15 @@ public class Cilindro {
         this.altura = altura;
     }
 
+    // Constructor especializado
+    public Cilindro(double radio) {
+        this.radio = radio;
+        this.altura = 1.0;
+    }
+
     // Métodos de acceso (getters y setters)
     public double getRadio() {
-        return radio;
+        return this.radio;
     }
 
     public void setRadio(double radio) {
