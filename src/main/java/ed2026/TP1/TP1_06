@@ -1,0 +1,128 @@
+6) Leer atentamente el enunciado presentado a continuación y luego, analizar la solución propuesta. ¡Cuidado!
+La solución contiene errores.
+Enunciado:
+Diseñar una clase TanqueAgua que represente un contenedor de líquido. La clase debe tener los atributos
+capacidadMaxima (en litros) y cantidadActual (en litros).
+Además, debe incluir:
+a) Un constructor predeterminado que inicialice capacidadMaxima en 100 y cantidadActual en 0.
+b) Un constructor parametrizado que reciba ambos valores. Si la cantidadActual excede la capacidadMaxima,
+se debe ajustar la cantidadActual para que sea igual a la capacidad máxima.
+c) Un método agregarAgua(double litros) que sume los litros a la cantidadActual. Si se excede la capacidad
+máxima, el tanque debe quedar lleno y mostrar un mensaje de advertencia.
+d) Un método retirarAgua(double litros) que reste los litros. Si se intenta retirar más agua de la disponible, el
+tanque debe quedar en 0.
+e) Un método mostrarEstado() que imprima la cantidad actual y la capacidad máxima.
+Solución propuesta (¡Contiene errores!):
+class TanqueAgua {
+public double capacidadMaxima;
+public double cantidadActual;
+public TanqueAgua() {
+this.capacidadMaxima = 100;
+this.cantidadActual = 0;
+}
+public TanqueAgua(double capacidadMaxima, double cantidadActual) {
+this.capacidadMaxima = capacidadMaxima;
+this.cantidadActual = cantidadActual;
+}
+public void agregarAgua(double litros) {
+this.cantidadActual = this.cantidadActual + litros;
+if (this.cantidadActual > this.capacidadMaxima) {
+System.out.println("Advertencia: Se excedio la capacidad.");
+}
+}public void retirarAgua(double litros) {
+ this.cantidadActual = this.cantidadActual - litros;
+ }
+ public void mostrarEstado() {
+ System.out.println("Actual: " + this.cantidadActual + " / Maxima: " +
+
+ this.capacidadMaxima);
+ }
+ }
+ Actividad:
+ 1. Analizar el código línea por línea e identificar los errores conceptuales y lógicos.
+ 2. Argumentar acerca de por qué constituyen errores. (Ayuda: Hay un error grave de encapsulamiento,
+ un error en el constructor parametrizado, un error de lógica en agregarAgua y otro en retirarAgua).
+ 3. ¿La solución responde completamente a lo solicitado por la consigna? ¿Se cumple la regla de que el
+ tanque "debe quedar lleno" o "debe quedar en 0" en los casos límite?
+ 4. Reescribir la clase TanqueAgua para que la solución sea correcta, respetando los principios de la
+ Programación Orientada a Objetos.
+
+ 6) Actividad:
+ 1. Analizar el código línea por línea e identificar los errores conceptuales y lógicos.
+
+ Encapsulamiento los atributos capacidadMaxima, cantidadActual son de acceso publico lo que rompe el encapsulamiento, nada me detiene de colocartanque.cantidadActual = -50;
+ y romper todo.
+ Solo muestra advertencias cuando se alcanzan los limites, lo ideal seria mostrar un error
+ Se pueden ingresar valores invalidos (100,200) o tener cantidades negativas de agua
+
+ 2. Argumentar acerca de por qué constituyen errores. (Ayuda: Hay un error grave de encapsulamiento, un error en el constructor parametrizado, un error de lógica en agregarAgua y otro en retirarAgua).
+
+ Error en agregarAgua(): cuando se supera el máximo, solo muestra una advertencia, pero no corrige el valor. El tanque puede quedar con más agua de la que permite su capacidad.
+
+ Error en retirarAgua(): si se retiran más litros que los disponibles, la cantidad puede quedar negativa.
+
+ 3. ¿La solución responde completamente a lo solicitado por la consigna? ¿Se cumple la regla de que el tanque "debe quedar lleno" o "debe quedar en 0" en los casos límite?
+
+ No, la solución no responde completamente a la consigna. No se cumplen correctamente los casos límite:
+ Si se agrega más agua que la capacidad, debería quedar lleno (cantidadActual = capacidadMaxima), pero el código deja un valor mayor.
+ Si se retira más agua de la disponible, debería quedar en 0, pero el código deja un valor negativo.
+
+4. Reescribir la clase TanqueAgua para que la solución sea correcta, respetando los principios de la Programación Orientada a Objetos.
+
+
+class TanqueAgua {
+    private double capacidadMaxima;
+    private double cantidadActual;
+
+    public TanqueAgua() {
+        this(100, 0);
+    }
+
+    public TanqueAgua(double capacidadMaxima, double cantidadActual) {
+        if (capacidadMaxima < 0) {
+            capacidadMaxima = 0;
+        }
+
+        this.capacidadMaxima = capacidadMaxima;
+
+        if (cantidadActual < 0) {
+            cantidadActual = 0;
+        } else if (cantidadActual > capacidadMaxima) {
+            cantidadActual = capacidadMaxima;
+        }
+
+        this.cantidadActual = cantidadActual;
+    }
+
+    public void agregarAgua(double litros) {
+        if (litros < 0) {
+            return;
+        }
+
+        cantidadActual += litros;
+
+        if (cantidadActual > capacidadMaxima) {
+            cantidadActual = capacidadMaxima;
+        }
+    }
+
+    public void retirarAgua(double litros) {
+        if (litros < 0) {
+            return;
+        }
+
+        cantidadActual -= litros;
+
+        if (cantidadActual < 0) {
+            cantidadActual = 0;
+        }
+    }
+
+    public void mostrarEstado() {
+        System.out.println("Actual: " + cantidadActual
+                + " / Máxima: " + capacidadMaxima);
+    }
+}
+
+
+
