@@ -41,5 +41,65 @@ public class TP0_01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // declaramos las variables
+        String nombreEmpleado = null;
+        int cantHorasTrabajadas = 0 ;
+        double valorPorHora = 0.0;
+        
+        double salarioBruto = 0.0;
+        double pagoNormal =0.0;
+        double pagoExtra =0.0;
+        double horasExtras =0.0;
+
+        double montoDelDescuento =0.0;
+        double salarioNeto =0.0;
+
+
+        System.out.println("   Calcular el salario ento de un trabajador por horas trabajadas      ");
+
+        System.out.println(" Ingrese el nombre del empleado:  ");
+        nombreEmpleado = scanner.nextLine();
+
+        System.out.println("Ingrese el valor de las horas trabajadas por semana:  ");
+        cantHorasTrabajadas = scanner.nextInt();
+
+        System.out.println("Ingrese el valor por horas trabajadas:  ");
+        valorPorHora = scanner.nextDouble();
+
+
+        if (cantHorasTrabajadas > 40){
+            pagoNormal = 40 * valorPorHora;
+
+            horasExtras = cantHorasTrabajadas - 40;
+            pagoExtra = horasExtras * (valorPorHora *1.5);  // 1.5 es xq 1.00 es del 100% del pago mas el 0.5 del recargo 
+            salarioBruto = pagoNormal + pagoExtra;
+
+        } else if (cantHorasTrabajadas<=40 && cantHorasTrabajadas >= 0){
+            salarioBruto =cantHorasTrabajadas * valorPorHora;
+        } else{
+            System.out.println (" La cantidad de horas trabajadas es inferior a 0 ");
+
+        }
+
+        if (salarioBruto<= 1000000){
+            montoDelDescuento= salarioBruto * 0.09 ;
+        } if (salarioBruto> 1000000 && salarioBruto<= 3000000){
+            montoDelDescuento= salarioBruto * 0.12 ;
+        } if (salarioBruto> 3000000){
+            montoDelDescuento= salarioBruto * 0.15 ;
+        } else {
+            System.out.println (" El salario Bruto es 0 pesos por lo que no existe descuento ");
+            }
+        salarioNeto = salarioBruto - montoDelDescuento;
+
+        System.out.println("El nombre del empleado es : " + nombreEmpleado);
+        System.out.println ("El monto total del descuento es de :  $" + montoDelDescuento );
+        System.out.println (" El salario neto a cobrar es de:  $" + salarioNeto );
+
+
+
+    scanner.close();
+
+
     }
 }
