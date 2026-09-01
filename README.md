@@ -53,8 +53,8 @@ Descargar y verificar el proyecto:
 
 ```bash
 cd [Directorio-De-Trabajo]
-git clone https://github.com/EstructuraDeDatosUNJu/ED-2026-2C
-cd 2026
+git clone https://github.com/EstructuraDeDatosUNJu/ED-2026-2C [Nombre-De-Tu-Repositorio-Local]
+cd [Nombre-De-Tu-Repositorio-Local]
 ```
 
 ### 1.b. Clonar el repositorio desde un Fork de EstructuraDeDatosUNJu
@@ -63,8 +63,8 @@ Antes tienes que haber realizado el Fork en GitHub
 
 ```bash
 cd [Directorio-De-Trabajo]
-git clone https://github.com/[Tu-Usuario-De-GitHub]/[Nombre-De-Tu-Repositorio].git
-cd [Nombre-De-Tu-Repositorio]
+git clone https://github.com/[Tu-Usuario-De-GitHub]/[Nombre-De-Tu-Repositorio].git [Nombre-De-Tu-Repositorio-Local]
+cd [Nombre-De-Tu-Repositorio-Local]
 ```
 
 ### 2. Compilar el proyecto
