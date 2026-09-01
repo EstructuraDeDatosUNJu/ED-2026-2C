@@ -53,7 +53,7 @@ Descargar y verificar el proyecto:
 
 ```bash
 cd [Directorio-De-Trabajo]
-git clone https://github.com/EstructuraDeDatosUNJu/2026.git
+git clone https://github.com/EstructuraDeDatosUNJu/ED-2026-2C
 cd 2026
 ```
 
