@@ -1,0 +1,76 @@
+5) Leer atentamente el enunciado presentado a continuación y luego, analizar las soluciones propuestas.
+Enunciado:
+Diseñar una clase llamada Bateria que representa la carga de un dispositivo. La clase debe tener un atributo
+para el porcentaje de carga (un valor entero entre 0 y 100). Debe permitir cargar la batería (sumando
+porcentaje, sin superar 100) y consumir batería (restando porcentaje, sin bajar de 0). En el programa
+principal, se debe crear una batería con 50% de carga, consumir 60 unidades (lo que debería dejarla en 0) y
+mostrar el estado final.
+Solución A
+class Bateria {
+public int carga;
+public Bateria(int cargaInicial) {
+if (cargaInicial < 0) cargaInicial = 0;
+if (cargaInicial > 100) cargaInicial = 100;
+this.carga = cargaInicial;
+}
+public void consumir(int cantidad) {
+this.carga = this.carga - cantidad;
+}
+}
+public class Main {
+public static void main(String[] args) {
+Bateria b = new Bateria(50);
+// Consumir 60
+if (b.carga - 60 < 0) {
+b.carga = 0;
+} else {
+b.carga = b.carga - 60;
+}
+System.out.println("Carga final: " + b.carga + "%");
+}
+}
+
+Solución B
+class Bateria {
+private int carga;public Bateria(int cargaInicial) {
+                  if (cargaInicial < 0) cargaInicial = 0;
+                  if (cargaInicial > 100) cargaInicial = 100;
+                  this.carga = cargaInicial;
+                  }
+                  public void consumir(int cantidad) {
+                  this.carga -= cantidad;
+                  if (this.carga < 0) {
+                  this.carga = 0;
+                  }
+                  }
+                  public int getCarga() {
+                  return this.carga;
+                  }
+                  }
+                  public class Main {
+                  public static void main(String[] args) {
+                  Bateria b = new Bateria(50);
+                  // Consumir 60
+                  b.consumir(60);
+                  System.out.println("Carga final: " + b.getCarga() + "%");
+                  }
+                  }
+
+
+5)  Preguntas sobre el problema
+ 1. ¿Cuál de las dos soluciones representa mejor los principios de la Programación Orientada a Objetos estudiados? Justifique su respuesta haciendo referencia al concepto de encapsulamiento.
+
+La segunda opción: debido al buen uso del encapsulamiento (consiste en agrupar datos y los métodos que los manipulan dentro de una misma estructura (clase), ocultando el estado interno del objeto y restringiendo el acceso directo desde fuera) como en el caso A que el acceso a carga es de tipo público cosa que no debería suceder.
+
+2. Si tuvieras que explicar por qué la Solución B es un mejor diseño de software a un compañero que recién empieza a programar, ¿qué argumentos le darías?
+
+Le diría a mi compañero que si dejamos una variable publica lo que conseguiremos es que corramos el riesgo que algo externo pueda alterar nuestros cálculos, como si tuvieramos un auto con el capo abierto.
+
+3. El enunciado pide que el valor "no baje de 0". ¿Cuál de las dos soluciones respeta mejor esta restricción de manera robusta? ¿Qué sucede en la Solución A si en el futuro otro programador escribe b.consumir(200) sin incluir una estructura selectiva if en el método main? ¿Y qué sucede en la Solución B en ese mismo caso?
+
+Las reglas del objeto deben estar dentro de la clase que protege el dato, al metodo ser publico la variables es modificada de manera externa (en A) y se salta las restricciones del 0 y 100. Lo más robusto es la opcion B
+Si alguien escribe b.consumir(200); la carga podria quedar en -150.
+
+4. Identificar al menos una ventaja de la Solución A y una ventaja de la Solución B. Luego, explicar por qué la Solución B puede ser más valiosa en un sistema de software real que puede crecer en el futuro.
+
+	Es una opción rápida (con errores según el caso de uso) para alguien que podría estar aprendiendo POO.
