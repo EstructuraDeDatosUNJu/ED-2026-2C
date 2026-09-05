@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 public class punto6 {
 
@@ -42,3 +42,5 @@ public class punto6 {
         System.out.println("Cadena final en minúsculas: " + cadenaFinal.toLowerCase());
     }
 }
+
+ */
