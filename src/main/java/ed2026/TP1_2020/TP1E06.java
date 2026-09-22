@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class TP1E06 {
 
-    public static void Run() {
+    public void Run() {
 
         String title;
         ArrayList<String> authors;

@@ -11,7 +11,7 @@ public class Book {
 
     //region Attributes
     private String title;
-    private String author;
+    // private String author;
     private ArrayList<String> authors;
     private String editorial;
     private Integer yearOfPublication;

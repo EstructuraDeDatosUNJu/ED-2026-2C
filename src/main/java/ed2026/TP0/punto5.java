@@ -1,3 +1,5 @@
+package ed2026.TP0;
+
 import java.util.Random;
 
 public class punto5 {

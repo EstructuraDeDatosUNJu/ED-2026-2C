@@ -1,3 +1,5 @@
+package ed2026.TP3;
+
 public class MiStack {
     private final int[] datos; // Arreglo donde se almacenan los elementos.
     private int cuenta; // Cantidad actual de elementos en la pila.
