@@ -11,7 +11,7 @@
         * Stack genérico. Hay una implementación específica para caracteres.
         * Queue genérico.
     * Se implementaron los métodos requeridos.
-        * Los métodos de Maxo son correctos, pero todo podría hacerse en el constructor y con menos consumo de memoria en estructuras temporales.
+        * Los métodos de Mazo son correctos, pero todo podría hacerse en el constructor y con menos consumo de memoria en estructuras temporales.
 
 * Identificación de variables y métodos - 20
     * Se identificaron correctamente las variables y métodos requeridos.
