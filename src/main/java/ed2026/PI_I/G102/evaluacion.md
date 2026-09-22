@@ -6,7 +6,7 @@
     * Funciona completamente.
     * Se resuelven correctamente los casos de prueba.
 
-* Resolución algorítmica - 18
+* Resolución algorítmica - 12
     * Se implementaron las estructuras de datos requeridas.
         * Stack con listas enlazadas, no es lo más adecuado.
         * Queue con listas enlazadas, no es lo más adecuado.

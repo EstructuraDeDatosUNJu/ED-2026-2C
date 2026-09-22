@@ -6,7 +6,7 @@
     * Funciona con fallos importantes.
         * La suma de los puntos de las cartas no se realiza correctamente.
 
-* Resolución algorítmica - 18
+* Resolución algorítmica - 12
     * Se implementaron las estructuras de datos requeridas.
         * Stack especializado para cartas; implementación con listas enlazadas.
         * Queue especializado para cartas; implementación con listas enlazadas.
