@@ -147,7 +147,7 @@ public class Game {
         // Count how many players drew the maximum card
         int count = 0;
         for (Card card : drawnCards) {
-            if (card == maxCard) {
+            if (card.getValue() == maxCard.getValue()) {
                 ++count;
             }
         }
