@@ -1,5 +1,7 @@
 package ed2026.PI_I.Julio;
 
+import java.util.Arrays;
+
 //
 // Created by Julio Tentor <jtentor@fi.unju.edu.ar>
 //
@@ -249,13 +251,15 @@ public class Queue<ELEMENT> implements Iterable<ELEMENT> {
         return this.count;
     }
 
-    @SuppressWarnings("unchecked")
-    public ELEMENT[] toArray() {
-        ELEMENT[] result = (ELEMENT[]) new Object[this.size()];
-        for (int i = 0, pos = this.head, cta = this.size(); cta > 0; ++i, pos = this.next(pos), --cta) {
-            result[i] = (ELEMENT) this.data[pos];
+    // @SuppressWarnings("unchecked")
+    public ELEMENT[] toArray(ELEMENT[] destination) {
+        if (destination.length < this.size()) {
+            destination = Arrays.copyOf(destination, this.size());
         }
-        return result;
+        for (int i = 0, pos = this.head, cta = this.size(); cta > 0; ++i, pos = this.next(pos), --cta) {
+            destination[i] = (ELEMENT) this.data[pos];
+        }
+        return destination;
     }
     //endregion
 

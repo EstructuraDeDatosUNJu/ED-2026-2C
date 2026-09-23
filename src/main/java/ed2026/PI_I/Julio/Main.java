@@ -1,5 +1,7 @@
 package ed2026.PI_I.Julio;
 
+import java.util.ArrayList;
+
 /**
  * The main class for the game.
  * 
@@ -13,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Player[] players = getPlayers();
+        Player[] players = getPlayers(Game.minPlayers);
 
         Helper.printOneDimensionArray(
                 "\nLos jugadores seleccionados son: ",
@@ -22,26 +24,38 @@ public class Main {
 
         Game game = new Game(players);
 
-        game.start();
-        game.showScores();
+        game.play(Game.minRounds);
+        game.displayScores();
 
     }
 
     /***
      * Generates an array of players with predefined names.
      * 
+     * @param playersCount the number of players to generate.
      * @return An array of players.
+     * @throws IllegalArgumentException if the number of players is not within the valid range.
+     * 
      */
-    private static Player[] getPlayers() {
+    private static Player[] getPlayers(int playersCount) {
 
-        // Define the number of players to be created
-        int playersCount = Game.minPlayers;
-        Player[] players = new Player[playersCount];
-
-        // Create players with random names from the predefined list
-        for (int i = 0; i < players.length; i++) {
-            players[i] = new Player(names[Helper.random.nextInt(names.length)]);
+        if (playersCount < Game.minPlayers || playersCount > Game.maxPlayers) {
+            throw new IllegalArgumentException(
+                    "Number of players must be between " + Game.minPlayers + " and " + Game.maxPlayers + ".");
         }
+
+        // Create players list with random names from the predefined list
+        ArrayList<Player> playersList = new ArrayList<>(playersCount);
+        Player player = null;
+        while (playersList.size() < playersCount) {
+            player = new Player(names[Helper.random.nextInt(names.length)]);
+            if (!playersList.contains(player)) {
+                playersList.add(player);
+            }
+        }
+
+        // Convert the ArrayList to an array
+        Player[] players = playersList.toArray(new Player[0]);
 
         // Shuffle the players array to randomize the order of the players
         Helper.suffleArray(players);
