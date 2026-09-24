@@ -1,6 +1,7 @@
 package ed2026.PI_I.Julio;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 //
 // Created by Julio Tentor <jtentor@fi.unju.edu.ar>
@@ -107,6 +108,22 @@ public class Queue<ELEMENT> implements Iterable<ELEMENT> {
         this.head = 0;
         this.tail = 0;
         this.count = 0;
+    }
+
+    /**
+     * Creates a new queue with the elements from the specified iterable.
+     * 
+     * @param elements the elements to be added to the queue.
+     * @throws RuntimeException if the elements collection is null or not an instance of Iterable.
+     */
+    public Queue(Iterable<ELEMENT> elements) {
+        if (elements == null || !(elements instanceof Iterable)) {
+            throw new RuntimeException("La colección de elementos no puede ser nula");
+        }
+        this(((Collection<ELEMENT>) elements).size());
+        for (ELEMENT element : elements) {
+            this.add(element);
+        }
     }
 
     //endregion
@@ -251,7 +268,7 @@ public class Queue<ELEMENT> implements Iterable<ELEMENT> {
         return this.count;
     }
 
-    // @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public ELEMENT[] toArray(ELEMENT[] destination) {
         if (destination.length < this.size()) {
             destination = Arrays.copyOf(destination, this.size());

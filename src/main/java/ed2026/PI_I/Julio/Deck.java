@@ -1,5 +1,8 @@
 package ed2026.PI_I.Julio;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * Represents a deck of playing cards.
  *
@@ -8,6 +11,11 @@ package ed2026.PI_I.Julio;
  * 
  */
 public class Deck {
+
+    private static final String[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
+    private static final String[] ranks = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen",
+            "King" };
+    private static final Integer[] values = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
 
     private Stack<Card> cards;
 
@@ -18,7 +26,6 @@ public class Deck {
      * stack.
      */
     public Deck() {
-        this.cards = new Stack<>(Game.maxCards);
         initializeDeck();
     }
 
@@ -27,27 +34,22 @@ public class Deck {
      * stack.
      */
     private void initializeDeck() {
-        String[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
-        String[] ranks = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
-        Integer[] values = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
-        Card[] cardsArray = new Card[Game.maxCards];
+        ArrayList<Card> cardsArray = new ArrayList<>(Game.maxCards);
 
         // Create the cards and store them in the cardsArray
-        int index = 0;
-        for (String suit : suits) {
-            for (int i = 0; i < ranks.length; i++) {
-                Card card = new Card(suit, ranks[i], values[i]);
-                cardsArray[index++] = card;
+        for (String suit : Deck.suits) {
+            for (int i = 0; i < Deck.ranks.length; i++) {
+                Card card = new Card(suit, Deck.ranks[i], Deck.values[i]);
+                cardsArray.add(card);
             }
         }
 
         // Suffle the cardsArray to randomize the order of the cards
-        Helper.suffleArray(cardsArray);
+        Collections.shuffle(cardsArray);
 
         // Push the shuffled cards into the stack
-        for (Card card : cardsArray) {
-            cards.push(card);
-        }
+        this.cards = new Stack<Card>(cardsArray);
+
     }
 
     /**

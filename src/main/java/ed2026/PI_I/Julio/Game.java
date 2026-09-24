@@ -49,7 +49,6 @@ public class Game {
 
         this.deck = new Deck();
         this.players = new Queue<>(players.length);
-
         for (Player player : players) {
             this.players.add(player);
         }

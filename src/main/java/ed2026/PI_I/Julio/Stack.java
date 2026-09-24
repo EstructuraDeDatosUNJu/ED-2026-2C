@@ -1,6 +1,7 @@
 package ed2026.PI_I.Julio;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * Implements a stack of objects of type ELEMENT. The stack has a fixed size, but it can be resized
@@ -8,7 +9,7 @@ import java.util.Arrays;
  * The stack is implemented using an array of objects.
  * 
  * @author Julio Tentor
- * @version 1.0.0
+ * @version 2.0.0
  * 
  * @param <ELEMENT> the type of elements in the stack.
  */
@@ -39,6 +40,22 @@ public class Stack<ELEMENT> {
         }
         this.data = new Object[dimension];
         this.count = 0;
+    }
+
+    /**
+     * Creates a new stack with the elements from the specified iterable.
+     * 
+     * @param elements the elements to initialize the stack with.
+     * @throws RuntimeException if the elements are null or not an instance of Iterable.
+     */
+    public Stack(Iterable<ELEMENT> elements) {
+        if (elements == null || !(elements instanceof Iterable)) {
+            throw new RuntimeException("La colección de elementos no puede ser nula");
+        }
+        this(((Collection<ELEMENT>) elements).size());
+        for (ELEMENT element : elements) {
+            this.push(element);
+        }
     }
 
     /**
@@ -85,7 +102,6 @@ public class Stack<ELEMENT> {
      * @param element the element to be pushed onto the stack.
      * @return the element that was pushed onto the stack.
      *         // @throws RuntimeException if the stack is full.
-     * 
      */
     public ELEMENT push(ELEMENT element) {
         if (this.size() >= this.data.length) {
@@ -120,7 +136,7 @@ public class Stack<ELEMENT> {
     /**
      * Returns the number of elements in this stack.
      * 
-     * @return
+     * @return the number of elements in this stack.
      */
     public int size() {
         return this.count;
@@ -175,8 +191,6 @@ public class Stack<ELEMENT> {
      * @return an array containing all of the elements in this stack in proper sequence.
      * @param destination The array into which the elements of the stack are to be stored.
      * @return the array containing all of the elements in this stack in proper sequence.
-     * @throws ClassCastException if the runtime type of the specified array is not a supertype of the
-     *                                runtime type of every element in this stack.
      */
     public ELEMENT[] toArray(ELEMENT[] destination) {
         if (destination.length < this.size()) {

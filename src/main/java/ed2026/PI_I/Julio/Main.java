@@ -1,13 +1,14 @@
 package ed2026.PI_I.Julio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * The main class for the game.
  * 
  * 
  * @author Julio Tentor
- * @version 1.0.0
+ * @version 2.0.0
  * 
  */
 
@@ -54,11 +55,11 @@ public class Main {
             }
         }
 
+        // Shuffle the players array to randomize the order of the players
+        Collections.shuffle(playersList);
+
         // Convert the ArrayList to an array
         Player[] players = playersList.toArray(new Player[0]);
-
-        // Shuffle the players array to randomize the order of the players
-        Helper.suffleArray(players);
 
         return players;
     }
