@@ -1,14 +1,14 @@
 # Evaluación de la práctica integradora 1
 
-## Código fuente - 100 puntos
+## Código fuente - 88 puntos
 
 * Funcionamiento - 50
     * Funciona completamente.
 
-* Resolución algorítmica - 30
+* Resolución algorítmica - 18
     * Se implementaron las estructuras de datos requeridas.
-        * Stack específico para cartas.
-        * Queue específico para cartas.
+        * Stack específico; Incorrecto uso de excepciones.
+        * Queue especpifico; Incorrecto uso de excepciones.
     * Se implementaron los métodos requeridos y solo esos.
 
 * Identificación de variables y métodos - 20

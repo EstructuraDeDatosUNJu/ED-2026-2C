@@ -1,10 +1,9 @@
 # Evaluación de la práctica integradora 1
 
-## Código fuente
+## Código fuente - 88 puntos
 
-* Funcionamiento - 20
-    * Funciona con fallos importantes.
-        * La suma de los puntos de las cartas no se realiza correctamente.
+* Funcionamiento - 50
+    * Funciona completamente.
 
 * Resolución algorítmica - 18
     * Se implementaron las estructuras de datos requeridas.
