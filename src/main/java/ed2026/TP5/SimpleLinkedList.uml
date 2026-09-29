@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="390.70164682414924" y="0.0">SimpleLinkedList</node>
+    <node x="90.0" y="69.0">SimpleLinkedList.Node</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="SimpleLinkedList.Node" target="SimpleLinkedList">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Balloon" zoom="1.0" x="320.0" y="237.0" />
+  <SelectedNodes>
+    <node>SimpleLinkedList.Node</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
