@@ -29,6 +29,12 @@ public class DemoSimpleLinkedList {
         System.out.println("Lista1.: " + list1.toString());
         System.out.println("Lista2.: " + list2.toString());
 
+        System.out.print("Muestra la lista con un iterador\n");
+        for (Integer item : list1) {
+            System.out.printf("%d ", item);
+        }
+        System.out.println();
+
         System.out.print("Extrae.: ");
         for (int i = 0; i < 3; ++i) {
             System.out.printf("%d ", list1.removeFirst());
